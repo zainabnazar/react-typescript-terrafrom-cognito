@@ -56,7 +56,7 @@ export function SignIn() {
                     <Spacer height="35px" />
                     <Stack align="center">
                         <Button type="submit" colorScheme="teal" size="lg">
-                            Login
+                            Click Login
                         </Button>
                     </Stack>
                 </form>
