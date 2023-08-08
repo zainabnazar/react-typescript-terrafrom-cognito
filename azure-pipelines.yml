@@ -19,7 +19,6 @@ steps:
   displayName: 'Run a multi-line script'
 
 - script: |
-    cd frontend
     npm install
     npm run build
     npm run test
