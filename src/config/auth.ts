@@ -1,7 +1,7 @@
 export const AwsConfigAuth = {
     region: "eu-west-2",
-    userPoolId: "eu-west-2_3s4hIWI0v",
-    userPoolWebClientId: "236iupbnnik0a9c4oi5nr2cnhi",
+    userPoolId: process.env.REACT_APP_AUTH_USER_POOL_ID,
+    userPoolWebClientId: process.env.REACT_APP_AUTH_USER_POOL_WEB_CLIENT_ID,
     cookieStorage: {
         domain: "localhost",
         path: "/",
