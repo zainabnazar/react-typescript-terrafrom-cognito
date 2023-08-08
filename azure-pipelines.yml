@@ -17,3 +17,15 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+
+- script: |
+    cd frontend
+    npm install
+    npm run build
+  displayName: 'npm install and build'
+
+- script: |
+    cd frontend
+    npm install
+    npm run test
+  displayName: 'npm install and running test'
