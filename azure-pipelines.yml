@@ -21,6 +21,6 @@ steps:
 - script: npm install
   displayName: 'Install Dependencies'
 
-- script: npm test a
+- script: npm test a --watchAll=false
   displayName: 'Run Tests'
 

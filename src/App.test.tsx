@@ -10,6 +10,7 @@ describe('App Component', () => {
     );
 
     expect(screen.getByText('Cognito Test')).toBeInTheDocument();
+    
   });
 
   test('Renders "STATUS: NOT LOGIN" text', () => {
