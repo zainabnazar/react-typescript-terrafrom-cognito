@@ -11,30 +11,27 @@ import {
   Spacer,
   Stack,
 } from "@chakra-ui/react";
+import usePost from "../hooks/usePost";
 
 export function SuccessPage() {
   const auth = useAuth();
   const [first, setFirst] = useState("");
   const [last, setLast] = useState("");
 
-  if (auth.isLoading) {
-    return <Box />;
-  }
+  const { postData } = usePost();
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-   event.preventDefault()
-    let formData = {
+    event.preventDefault();
+    let data = {
       first: first,
       last: last,
     };
-    fetch('/send-form-to-decision-api', {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body:JSON.stringify(formData)
-    });
-    console.log('clicked');
+    postData("/send-form-to-decision-api", data);
+    console.log("clicked");
   };
+  if (auth.isLoading) {
+    return <Box />;
+  }
 
   return (
     <PrivateRoute>
