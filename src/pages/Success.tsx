@@ -20,15 +20,29 @@ export function SuccessPage() {
 
   const { postData } = usePost();
 
+  // to POST form data to NODE EXPRESS backend
+  //   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  //     event.preventDefault();
+  //     let data = {
+  //       first: first,
+  //       last: last,
+  //     };
+  //     postData("/send-form-to-decision-api", data);
+  //     console.log("clicked");
+  //   };
+
+  //TO POST to .NET backend
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     let data = {
-      first: first,
-      last: last,
+      Id: Math.floor(Math.random() * 10),
+      First: first,
+      Last: last,
     };
-    postData("/send-form-to-decision-api", data);
+    postData("/api/form", data);
     console.log("clicked");
   };
+
   if (auth.isLoading) {
     return <Box />;
   }
